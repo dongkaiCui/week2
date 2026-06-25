@@ -28,7 +28,7 @@ if hot_list:
         hot_score VARCHAR(50),
         create_time DATETIME DEFAULT CURRENT_TIMESTAMP
     )''')
-    db.execute('TRUNCATE TABLE baidu_hot')   # <--- 新增这一行
+    db.execute('TRUNCATE TABLE baidu_hot') 
     for title, score in hot_list:
         db.execute('INSERT INTO baidu_hot (title, hot_score) VALUES (%s, %s)', (title, score))
     db.close()
